@@ -1,3 +1,9 @@
+/**
+ * MultiMap JS
+ * Version 0.0
+ * Created by Bilaal Rashid
+ */
+
 (function(window){
 	// Library class function
 	function library() {
@@ -50,8 +56,8 @@
 
 		/**
 		 * Adds pin to map
-		 * @param {Object} position [Position of pin to be added]
-		 * @return {?Pin} [Return pin]
+		 * @param  {Object} position [Position of pin to be added]
+		 * @return {?Pin}            [Return pin]
 		 */
 		_library.addPin = function(position) {
 			if (settings.setup.platform == "google" && googleMap.loaded == true) {
