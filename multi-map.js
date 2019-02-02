@@ -138,7 +138,7 @@
 		/**
 		 * Adds pin to map
 		 * @param  {Object} position [Position of pin to be added]
-		 * @return {?Pin}            [Return pin]
+		 * @return {?Pin}            [Return Google Maps pin]
 		 */
 		_library.addPin = function(position) {
 			if (settings.setup.platform == "google" && googleMap.loaded == true) {
@@ -151,6 +151,14 @@
 				});
 
 				return pin;
+			} else if (settings.setup.platform == "apple" && appleMap.loaded == true) {
+				var coord = new mapkit.Coordinate(position.latitude, position.longlitude);
+				var MarkerAnnotation = mapkit.MarkerAnnotation;
+				var annotation = new MarkerAnnotation(coord);
+
+				appleMap.map.addAnnotation(annotation);
+
+				return null;
 			}
 
 			return null;
