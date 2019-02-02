@@ -21,7 +21,7 @@
 
 		_library.setup = function() {
 			map = new google.maps.Map(document.getElementById('map'), {
-				center: {lat: settings.google.center.latitude, lng: settings.google.center.longlitude},
+				center: {lat: settings.setup.center.latitude, lng: settings.setup.center.longlitude},
 				zoom: settings.google.zoom
 			});
 		};
