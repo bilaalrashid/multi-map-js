@@ -134,7 +134,7 @@
 
 			var region = new mapkit.CoordinateRegion(
 				new mapkit.Coordinate(settings.setup.center.latitude, settings.setup.center.longlitude),
-				new mapkit.CoordinateSpan(settings.apple.coordinateSpan.latitude, settings.apple.coordinateSpan.longlitude)
+				new mapkit.CoordinateSpan(settings.apple.centerSpan.latitude, settings.apple.centerSpan.longlitude)
 			);
 
 			appleMap.map = new mapkit.Map(settings.setup.map);
