@@ -28,8 +28,16 @@
 		 */
 		_library.init = function(options, callback) {
 			settings = options;
-
 			initCallback = callback;
+
+			if (settings.setup.platform == "auto") {
+				var isApple = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+				if (isApple) {
+					settings.setup.platform = "apple";
+				} else {
+					settings.setup.platform = "google";
+				}
+			}
 
 			// Load map API
 			if (settings.setup.platform == "google") {
