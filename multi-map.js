@@ -120,7 +120,7 @@
 		_library.setupGoogle = function() {
 			googleMap.loaded = true;
 
-			googleMap.map = new google.maps.Map(document.getElementById(settings.setup.map), {
+			googleMap.map = new google.maps.Map(document.getElementById(settings.setup.mapID), {
 				center: {
 					lat: settings.setup.center.latitude, 
 					lng: settings.setup.center.longlitude
@@ -145,7 +145,7 @@
 				new mapkit.CoordinateSpan(settings.apple.centerSpan.latitude, settings.apple.centerSpan.longlitude)
 			);
 
-			appleMap.map = new mapkit.Map(settings.setup.map);
+			appleMap.map = new mapkit.Map(settings.setup.mapID);
 			appleMap.map.region = region;
 
 			if (typeof(initCallback) == "function") {
