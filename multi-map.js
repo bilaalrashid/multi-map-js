@@ -13,8 +13,12 @@
 		 * Instance variables
 		 */
 		var settings = {};
-		var googleMap = {};
-		var appleMap = {};
+		var googleMap = {
+			pins: []
+		};
+		var appleMap = {
+			pins: []
+		};
 		var initCallback;
 
 		/**
@@ -29,8 +33,14 @@
 
 			// Load map API
 			if (settings.setup.platform == "google") {
+				/*
+				 * Google Maps
+				 */
 				_library.loadScript("https://maps.googleapis.com/maps/api/js?key="+settings.google.apiKey+"&callback=MultiMap.setupGoogle");
 			} else {
+				/*
+				 * Apple MapKit JS
+				 */
 				_library.loadScript("https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js", function() {
 					// Initialises MapKit JS using JWT authentication code
 					mapkit.init({
@@ -138,7 +148,7 @@
 		/**
 		 * Adds pin to map
 		 * @param  {Object} pinSettings [Position of pin to be added]
-		 * @return {?Pin}               [Return Google Maps pin]
+		 * @return {?Int}               [Return pin id]
 		 */
 		_library.addPin = function(pinSettings) {
 			/*
@@ -266,6 +276,11 @@
 
 				var pin = new google.maps.Marker(mapPinOptions);
 
+				googleMap.pins.push(pin);
+
+				var pinIndex = googleMap.pins.length - 1;
+
+				// Create info window
 				if (infoHTML) {
 					var infowindow = new google.maps.InfoWindow({
 						content: infoHTML
@@ -276,7 +291,7 @@
 					});
 				}
 
-				return pin;
+				return pinIndex;
 			} else if (settings.setup.platform == "apple" && appleMap.loaded == true) {
 				/*
 				 * Apple MapKit JS
@@ -337,6 +352,11 @@
 
 					var imageAnnotation = new mapkit.ImageAnnotation(coord, markerSettings);
 					appleMap.map.addAnnotation(imageAnnotation);
+
+					appleMap.pins.push(imageAnnotation);
+
+					var annotationIndex = appleMap.pins.length - 1;
+					return annotationIndex;
 				} else {
 					// Marker annotation mode
 					
@@ -371,11 +391,14 @@
 
 					var MarkerAnnotation = mapkit.MarkerAnnotation;
 					var annotation = new MarkerAnnotation(coord, markerSettings);
-
 					appleMap.map.addAnnotation(annotation);
+
+					appleMap.pins.push(annotation);
+
+					var markerIndex = appleMap.pins.length - 1;
+					return markerIndex;
 				}
 
-				return null;
 			}
 
 			return null;
