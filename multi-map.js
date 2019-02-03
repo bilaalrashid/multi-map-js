@@ -404,6 +404,28 @@
 			return null;
 		};
 
+		/**
+		 * Removes pin from map
+		 * @param  {Int} pinID [Index of pin in stored pins array]
+		 */
+		_library.removePin = function(pinID) {
+			if (settings.setup.platform == "google" && googleMap.loaded == true) {
+				/*
+				 * Google Maps
+				 */
+				
+				googleMap.pins[pinID].setMap(null);
+				googleMap.pins[pinID] = null;
+			} else if (settings.setup.platform == "apple" && appleMap.loaded == true) {
+				/*
+				 * Apple MapKit JS
+				 */
+				
+				appleMap.map.removeAnnotation(appleMap.pins[pinID]);
+				appleMap.pins[pinID] = null;
+			}
+		};
+
 		return _library;
 	}
 
