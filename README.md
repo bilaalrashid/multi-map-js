@@ -57,6 +57,25 @@ The following code adds a basic pin to the map. A pin identifier is returned.
   });
 </script>
 ```
+### Customising a pin
+
+Pins have lots of options to customise them. All settings can be added as attributes to the pin settings object.
+
+#### Titles and subtitles
+
+In Apple's MapKit JS, the `title` and `subtitle` settings attributues directly map to attributes of the same name for a Marker Annotation and appear below the marker. If the `icon` settings attribute is defined, an Image Annotation is used in MapKit JS, so the title and subtitle appear as a 'speech mark' box, much like a Google Maps Info Window. In Google Maps, there are no title or subtitle equivalents, so the title and subtitle are implemented using a custom HTML Info Window.
+
+``` JavaScript
+var pinSettings = {
+    position: {
+        latitude: 0,
+        longlitude: 0
+    },
+    title: "Title",
+    subtitle: "Subtitle"
+}
+```
+
 
 ### Remove pin
 The following code adds a basic pin to the map. A pin identifier is returned.
