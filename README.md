@@ -76,6 +76,50 @@ var pinSettings = {
 }
 ```
 
+#### MapKit JS Glyphs and Marker Customisation
+
+Apple's MapKit JS has the ablity to customise the glyph that is displayed inside the red pin. These properties do not affect Google Maps. Glyphs can either be in the form of a string, using the `glyphText` propety.
+
+``` JavaScript
+var pinSettings = {
+    position: {
+        latitude: 0,
+        longlitude: 0
+    },
+    glyphText: "ABC"
+}
+```
+
+To specify the glyph as an image, the `glyphImage` can be used. To support Retina displays, an optional, but recomened, 2x sized imaged can be specified. The `selectedGlyphImage` can also be used to specify a different image to be used when the pin is selected.
+
+``` JavaScript
+var pinSettings = {
+    position: {
+        latitude: 0,
+        longlitude: 0
+    },
+    glyphImage: {
+      1: "image.png",
+      2: "image_2x.png", // Optional 2x sized image for Retina displays
+    },
+    selectedGlyphImage: {
+      1: "image.png",
+      2: "image_2x.png", // Optional 2x sized image for Retina displays
+    }
+}
+```
+
+The colour of the pins in MapKit JS can also be specified.
+
+``` JavaScript
+var pinSettings = {
+    position: {
+        latitude: 0,
+        longlitude: 0
+    },
+    color: "#969696"
+}
+```
 
 ### Remove pin
 The following code adds a basic pin to the map. A pin identifier is returned.
