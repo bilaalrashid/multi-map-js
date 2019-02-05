@@ -7,7 +7,7 @@ Automatic wrapper for Google Maps API and MapKit JS based upon OS
 The following code loads a plain map into the DOM.
 ``` HTML
 <div id="map"></div>
-<script src="multi-map.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/TheRealBilaal/multi-map@1.0/multi-map.min.js"></script>
 <script>
   var settings = {
       setup: {
