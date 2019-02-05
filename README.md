@@ -168,3 +168,4 @@ The following code adds a basic pin to the map. A pin identifier is returned.
 - Routing
 - Map overlays
 - Customise map
+- Add support for additional map APIs
