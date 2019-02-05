@@ -139,8 +139,9 @@ var pinSettings = {
       width: 32,
       height: 32,
     },
-    anchor: "center" // Options: "center", "centerLeft", "centerRight", "bottomCenter", "bottomLeft", "bottomRight", 
-}                    // "topCenter", "topLeft", "topRight"
+    anchor: "center" // Options: "center", "centerLeft", "centerRight", "bottomCenter", "bottomLeft",
+}                    //  "bottomRight", "topCenter", "topLeft", "topRight"
+```
 
 ### Remove pin
 The following code adds a basic pin to the map. A pin identifier is returned.
