@@ -121,6 +121,27 @@ var pinSettings = {
 }
 ```
 
+#### Custom pin icon
+
+The entire pin icon can be customised using the `icon` property. This has the same affect on both Google Maps and MapKit JS. It is different to setting an image glyph for MapKit JS. To support Retina displays, an optional, but recomened, 2x sized imaged can be specified. To set the anchor of the image, both the `size` and `anchor` properties must be set.
+
+``` JavaScript
+var pinSettings = {
+    position: {
+        latitude: 0,
+        longlitude: 0
+    },
+    icon: {
+      1: "image.png",
+      2: "image_2x.png", // Optional 2x sized image for Retina displays
+    },
+    size: {
+      width: 32,
+      height: 32,
+    },
+    anchor: "center" // Options: "center", "centerLeft", "centerRight", "bottomCenter", "bottomLeft", "bottomRight", 
+}                    // "topCenter", "topLeft", "topRight"
+
 ### Remove pin
 The following code adds a basic pin to the map. A pin identifier is returned.
 ``` HTML
