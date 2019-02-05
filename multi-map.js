@@ -1,6 +1,6 @@
 /**
  * MultiMap JS
- * Version 0.0
+ * Version 1.0
  * Created by Bilaal Rashid
  */
 
