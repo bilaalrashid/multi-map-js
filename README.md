@@ -7,6 +7,9 @@ Automatic wrapper for Google Maps API and MapKit JS based upon OS
   - [Load map](#load-map)
   - [Add pin](#add-pin)
   - [Customising a pin](#customising-a-pin)
+    - [Titles and subtitles](#titles-and-subtitles)
+    - [MapKit JS glyphs and marker customisation](#mapkit-js-glyphs-and-marker-customisation)
+    - [Custom pin icon](#custom-pin-icon)
   - [Remove pin](#remove-pin)
 - [Future Development](#future-development)
 
@@ -44,6 +47,7 @@ The following code loads a plain map into the DOM.
 </script>
 ```
 The settings are split into three sections: `setup`, which contains all of the generic options for both maps, `google`, which contains all of settings specific to Google Maps, and `apple`, which contains all of the settings specific to MapKit JS.
+
 
 ### Add pin
 The following code adds a basic pin to the map. A pin identifier is returned.
@@ -85,7 +89,7 @@ var pinSettings = {
 }
 ```
 
-#### MapKit JS Glyphs and Marker Customisation
+#### MapKit JS glyphs and marker customisation
 
 Apple's MapKit JS has the ablity to customise the glyph that is displayed inside the red pin. These properties do not affect Google Maps. Glyphs can either be in the form of a string, using the `glyphText` propety.
 
