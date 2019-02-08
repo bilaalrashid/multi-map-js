@@ -1,6 +1,15 @@
 # Multi Map
 Automatic wrapper for Google Maps API and MapKit JS based upon OS
 
+## Contents
+
+- [Usage](#usage)
+  - [Load map](#load-map)
+  - [Add pin](#add-pin)
+  - [Customising a pin](#customising-a-pin)
+  - [Remove pin](#remove-pin)
+- [Future Development](#future-development)
+
 ## Usage
 
 ### Load map
